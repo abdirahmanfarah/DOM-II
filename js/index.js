@@ -52,17 +52,38 @@ desti.forEach(item => {
 
 // Select
 
-function logSelection(event){
-  const log = document.querySelector('.footer');
-  const select = event.target.value.substring(event.target.selectionStart, event.target.selectionEnd);
-  log.textContent = `You Selected: ${select}`;
+let select = document.querySelector('.footer')
 
-}
+select.addEventListener('select', event => {
+    event.target.style.backgroundColor = 'red';
+})
 
-const textarea = document.querySelector('textarea');
-textarea.onselect = logSelection;
+// Animation 
 
-// select.addEventListener('select', event => {
-//     event.target.style.color = 'red';
+// const animation = document.querySelector('.btn');
+const applyAnimation = document.querySelectorAll('.btn');
+
+applyAnimation.forEach(item => {
+  item.addEventListener('click', e => {
+    item.style.backgroundColor = 'green';
+  })
+})
+
+// animation.addEventListener('animationstart', e =>{
+//     console.log('Animation Started');
 // })
+
+// animation.addEventListener('animationstart', () => {
+//   animation.textContent = `'animation started'`;
+// });
+
+// const newDoc = document.querySelector('h2.content-destination');
+
+// Re-size
+window.addEventListener('resize', event =>{
+  const newDoc = document.querySelector('.content-destination');
+  newDoc.textContent= "Don't Pick Your Destination!";
+  newDoc.style.backgroundColor = 'green';
+})
+
 
