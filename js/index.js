@@ -16,7 +16,7 @@ const scaleUp = document.querySelectorAll('.img-content');
 
 scaleUp.forEach(item => {
   item.addEventListener('mouseenter', event =>{
-    item.style.transform = 'scale(1.3)';
+    item.style.transform = 'scale(2.5)';
     item.style.transition = 'transform 0.5s';
   })
 })
@@ -26,7 +26,7 @@ const scaleDown = document.querySelectorAll('.img-content');
 
 scaleDown.forEach(item => {
   item.addEventListener('mouseleave', event =>{
-    item.style.transform = 'scale(1.1)';
+    item.style.transform = 'scale(1)';
     item.style.transition = 'transform 0.5s';
   })
 })
@@ -50,24 +50,66 @@ desti.forEach(item => {
   })
 })
 
+// Re-size
+window.addEventListener('resize', event =>{
+  const newDoc = document.querySelector('.content-destination');
+  newDoc.textContent= "Don't Pick Your Destination!";
+  newDoc.style.backgroundColor = 'green';
+})
+
+// Load 
+
+window.addEventListener('load', e => {
+  console.log('Hello, welcome to Earth!');
+});
+
+//Key Down
+
+const key = document.querySelector('.main-navigation');
+
+key.addEventListener('keydown', event =>{
+  key.style.backgroundColor = 'blue'
+});
+
+let turnBlue = e =>{
+  key.style.backgroundColor = 'pink'
+}
+document.addEventListener('keydown', turnBlue);
+
+document.getElementsByClassName(".nav-link").style.zIndex = "-1";
+
+//Created New Element
+
+const header = document.querySelector('.intro');
+const newInput = document.createElement('input');
+
+newInput.setAttribute('type', 'text');
+
+header.append(newInput);
+
 // Select
 
+let selectParagraph = document.querySelector('.footer p')
 let select = document.querySelector('.footer')
 
-select.addEventListener('select', event => {
-    event.target.style.backgroundColor = 'red';
-})
+function changeColor(event){
+ document.body.style.backgroundColor = 'red'
+
+}
+
+// selectParagragraph.addEventListener('select', changeColor);
 
 // Animation 
 
 // const animation = document.querySelector('.btn');
-const applyAnimation = document.querySelectorAll('.btn');
 
-applyAnimation.forEach(item => {
-  item.addEventListener('click', e => {
-    item.style.backgroundColor = 'green';
-  })
-})
+// const applyAnimation = document.querySelectorAll('.btn');
+
+// applyAnimation.forEach(item => {
+//   item.addEventListener('click', e => {
+//     item.style.backgroundColor = 'green';
+//   })
+// })
 
 // animation.addEventListener('animationstart', e =>{
 //     console.log('Animation Started');
@@ -79,11 +121,14 @@ applyAnimation.forEach(item => {
 
 // const newDoc = document.querySelector('h2.content-destination');
 
-// Re-size
-window.addEventListener('resize', event =>{
-  const newDoc = document.querySelector('.content-destination');
-  newDoc.textContent= "Don't Pick Your Destination!";
-  newDoc.style.backgroundColor = 'green';
-})
+// Select
+
+// const intro = document.querySelector('.intro');
+// const input = document.createElement('.input');
+
+// intro.append(input);
+
+
+
 
 
