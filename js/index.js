@@ -67,16 +67,16 @@ window.addEventListener('load', e => {
 
 const key = document.querySelector('.main-navigation');
 
-key.addEventListener('keydown', event =>{
-  key.style.backgroundColor = 'blue'
-});
+// key.addEventListener('keydown', event =>{
+//   key.style.backgroundColor = ''
+// });
 
 let turnBlue = e =>{
   key.style.backgroundColor = 'pink'
 }
 document.addEventListener('keydown', turnBlue);
 
-document.getElementsByClassName(".nav-link").style.zIndex = "-1";
+// document.getElementsByClassName(".nav-link").style.zIndex = "-1";
 
 //Created New Element
 
